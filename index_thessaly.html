@@ -83,14 +83,14 @@ MapLibre GL JavaScript
     padding: 18px;
     font-size: 13px;
     border-radius: 6px;
-    max-width: 360px; /* 🗺️ Allows user to change the legend box max width
-    max-height: 85vh; /* 🗺️ Allows user to change the legend box max height
+    max-width: 360px; /* 🗺️ Allows user to change the legend box max width */
+    max-height: 85vh; /* 🗺️ Allows user to change the legend box max height */
     box-shadow: 0 2px 6px rgba(0,0,0,0.25);
     display: none;
     resize: both;
     overflow: auto;
-    min-width: 200px; /* 🗺️ Allows user to change the legend box min width
-    min-height: 100px; /* 🗺️ Allows user to change the legend box min height
+    min-width: 200px; /* 🗺️ Allows user to change the legend box min width */
+    min-height: 100px; /* 🗺️ Allows user to change the legend box min height */
   }
   
   /* 🌍 🗺️ MODIFY HEADER STYLES: Change title/subtitle/author font sizes and colors here */
@@ -340,7 +340,7 @@ Examples:
 const map = new maplibregl.Map({
   container: 'map',           // Links to the <div id="map"> element in HTML
   style: 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json',  // Initial basemap style
-  center: [28.4, 36.6],       // 🌍 [longitude, latitude] - CHANGE THIS TO MATCH THE STUDY AREA CENTER (APPROXIMATELY)!
+  center: [22.4, 39.6],       // 🌍 [longitude, latitude] - CHANGE THIS TO MATCH THE STUDY AREA CENTER (APPROXIMATELY)!
   zoom: 10                    // 🌍 Initial zoom level - CHANGE THIS SO THAT THE REQUIRED ZOOM LEVEL ENCOMPASSES THE ENTIRE STUDY AREA. SMALLER VALUES - ZOOM OUT!
 });
 
@@ -371,41 +371,41 @@ const layerDefinitions = {
   popdens: {
     sourceId: 'popdens-src',                       // Internal ID for the data source
     layerId: 'popdens-layer',                      // Internal ID for the map layer
-    url: 'DATA FOLDER NAME ON GITHUB/GEOJSON FILE NAME',        // 🌍 Path to your file
-    dataField: 'FIELD NAME'                           // 🌍 Column name in your GeoJSON
+    url: 'https://github.com/margotstrt/Thessalia_web_map/blob/main/data/data/pop_dens.geojson',        // 🌍 Path to your file
+    dataField: 'pop_dens'                           // 🌍 Column name in your GeoJSON
   },
   // Dasymmetric map layer (population density by land cover zone)
   denscover: {
     sourceId: 'denscover-src',
     layerId: 'denscover-layer',
-    url: 'DATA FOLDER NAME ON GITHUB/GEOJSON FILE NAME',  // 🌍 Path to your file
-    dataField: 'FIELD NAME'                        // 🌍 Column name in your GeoJSON
+    url: 'https://github.com/margotstrt/Thessalia_web_map/blob/main/data/data/dimoi_dasym.geojson',  // 🌍 Path to your file
+    dataField: 'dimoi_dasym'                        // 🌍 Column name in your GeoJSON
   },
   // Proportional symbols layer (circles sized by population)
   poipop: {
     sourceId: 'poipop-src',
     layerId: 'poipop-layer',
-    url: 'DATA FOLDER NAME ON GITHUB/GEOJSON FILE NAME',        // 🌍 Path to your file
-    dataField: 'FIELD NAME',                           // 🌍 Column name in your GeoJSON
-    maxValueApprox: 150000                         // 🌍 Set the maximum population value (for scaling circles)
+    url: 'https://github.com/margotstrt/Thessalia_web_map/blob/main/data/data/dimoi_centr.geojson',        // 🌍 Path to your file
+    dataField: 'dimoi_centr',                           // 🌍 Column name in your GeoJSON
+    maxValueApprox: 120000                         // 🌍 Set the maximum population value (for scaling circles)
   },
   // Contours/isopleths layer (population potential lines)
   contours: {
     sourceId: 'contours-src',
     layerId: 'contours-layer',
-    url: 'DATA FOLDER NAME ON GITHUB/GEOJSON FILE NAME'     // 🌍 Path to your file
+    url: 'https://github.com/margotstrt/Thessalia_web_map/blob/main/data/data/pop_contours_200.geojson'     // 🌍 Path to your file
   },
   // Dot density layer (each dot represents X people)
   dots: {
     sourceId: 'dots-src',
     layerId: 'dots-layer',
-    url: 'DATA FOLDER NAME ON GITHUB/GEOJSON FILE NAME'          // 🌍 Path to your file
+    url: 'https://github.com/margotstrt/Thessalia_web_map/blob/main/data/data/pop_dots_500.geojson'          // 🌍 Path to your file
   },
   // Boundaries layer (municipal borders)
   boundaries: {
     sourceId: 'boundaries-src',
     layerId: 'boundaries-layer',
-    url: 'DATA FOLDER NAME ON GITHUB/GEOJSON FILE NAME'            // 🌍 Path to your file
+    url: 'https://github.com/margotstrt/Thessalia_web_map/blob/main/data/data/dimoi_oria.geojson'            // 🌍 Path to your file
   }
 };
 
@@ -448,7 +448,7 @@ const enabledLayers = {
 const colorSchemes = {
   3: ['#ffcccc', '#ff6666', '#990000'],           // 🌍 3 classes = 3 colors (lightest to darkest)
   4: ['#ffcccc', '#ff9999', '#cc0000', '#990000'], // 🌍 4 classes = 4 colors (lightest to darkest)
-  5: ['#ffcccc', '#ff9999', '#ff6666', '#cc0000', '#990000'],  // Default 🌍 5 classes = 5 colors (lightest to darkest)
+  5: ['#f1d7f6', '#d7b5d8', '#df65b0', '#dd1c77', '#980043'],  // Default 🌍 5 classes = 5 colors (lightest to darkest)
   6: ['#ffcccc', '#ff9999', '#ff6666', '#ff3333', '#cc0000', '#990000'], // 🌍 6 classes = 6 colors (lightest to darkest)
   7: ['#ffcccc', '#ff9999', '#ff6666', '#ff3333', '#ff0000', '#cc0000', '#990000'] // 🌍 7 classes = 7 colors (lightest to darkest)
 };
@@ -472,7 +472,7 @@ const colorSchemes = {
 const denscoverColorSchemes = {
   3: ['#ffcccc', '#ff6666', '#990000'], // 🌍 3 classes = 3 colors (lightest to darkest)
   4: ['#ffcccc', '#ff9999', '#cc0000', '#990000'], // 🌍 4 classes = 4 colors (lightest to darkest)
-  5: ['#ffcccc', '#ff9999', '#ff6666', '#cc0000', '#990000'],  // Default 🌍 5 classes = 5 colors (lightest to darkest)
+  5: ['#f1d7f6', '#d7b5d8', '#df65b0', '#dd1c77', '#980043'],  // Default 🌍 5 classes = 5 colors (lightest to darkest)
   6: ['#ffcccc', '#ff9999', '#ff6666', '#ff3333', '#cc0000', '#990000'], // 🌍 6 classes = 6 colors (lightest to darkest)
   7: ['#ffcccc', '#ff9999', '#ff6666', '#ff3333', '#ff0000', '#cc0000', '#990000'] // 🌍 7 classes = 7 colors (lightest to darkest)
 };
@@ -488,8 +488,8 @@ const denscoverColorSchemes = {
 // 3. Select "Custom intervals" in classification dropdown
 // 4. The legend (Lines ~906-919) will automatically update with your new breaks and colors
 // 5. FOR THE CUSTOM INTERVALS, YOU DON'T HAVE TO ADD 3, 4 .... 7 CLASSES. IT'S UP TO YOU TO SELECT THE NUMBER OF CLASSES AND THE INTERVALS 
-const customBreaks = [30, 75, 150, 300, 600]; // 🌍 Set the custom class breaks
-const customColors = ['#ffcccc', '#ff9999', '#ff6666', '#cc0000', '#990000', '#660000']; //🌍 Set a colour for each class
+const customBreaks = [16.5, 22, 34, 50, 500]; // 🌍 Set the custom class breaks
+const customColors = ['#f1d7f6', '#d7b5d8', '#df65b0', '#dd1c77', '#980043', '#660000']; //🌍 Set a colour for each class
 
 /* 🌍 DEFINE YOUR CUSTOM INTERVAL BREAKS FOR DENS_COVER */
 // These break values define the class boundaries for custom classification in dasymmetric map
@@ -502,8 +502,8 @@ const customColors = ['#ffcccc', '#ff9999', '#ff6666', '#cc0000', '#990000', '#6
 // 3. Select "Custom intervals" in classification dropdown
 // 4. The legend (Lines ~921-934) will automatically update with your new breaks and colors
 // 5. FOR THE CUSTOM INTERVALS, YOU DON'T HAVE TO ADD 3, 4 .... 7 CLASSES. IT'S UP TO YOU TO SELECT THE NUMBER OF CLASSES AND THE INTERVALS 
-const denscoverCustomBreaks = [500, 1500, 3500, 6000, 8500]; // 🌍 Set the custom class breaks
-const denscoverCustomColors = ['#ffcccc', '#ff9999', '#ff6666', '#cc0000', '#990000', '#660000']; //🌍 Set a colour for each class
+const denscoverCustomBreaks = [4, 10, 20, 600, 10401]; // 🌍 Set the custom class breaks
+const denscoverCustomColors = ['#f1d7f6', '#d7b5d8', '#df65b0', '#dd1c77', '#980043', '#660000']; //🌍 Set a colour for each class
 
 // ============================================================
 // 4. CLASSIFICATION FUNCTIONS
@@ -891,7 +891,7 @@ function loadPoipopLayer() {
       ensureSource(def.sourceId, geojson);
 
       const maxR = parseInt(document.getElementById('maxRadius').value,10);
-      const vL = def.maxValueApprox || 150000; // 🌍 Set the same number as in Line 390 (maximum population value based on the geojson population field values)
+      const vL = def.maxValueApprox || 120000; // 🌍 Set the same number as in Line 390 (maximum population value based on the geojson population field values)
       const radiusExpr = ['*', ['^', ['/', ['get', def.dataField], vL], 0.57], maxR]; // 🗺️ You generally don't need to modify this function unless you want to experiment with different scaling methods
 
       if (!map.getLayer(def.layerId)) {
@@ -931,7 +931,7 @@ function updatePoipopRadius() {
   if (!map.getLayer(def.layerId)) return;
   
   const maxR = parseInt(document.getElementById('maxRadius').value,10);
-  const vL = def.maxValueApprox || 150000; // 🌍 Set the same number as in Lines 390 and 894 (maximum population value based on the geojson population field values)
+  const vL = def.maxValueApprox || 120000; // 🌍 Set the same number as in Lines 390 and 894 (maximum population value based on the geojson population field values)
   const radiusExpr = ['*', ['^', ['/', ['get', def.dataField], vL], 0.57], maxR]; // 🗺️ You generally don't need to modify this function unless you want to experiment with different scaling methods
   
   map.setPaintProperty(def.layerId, 'circle-radius', radiusExpr);
@@ -950,7 +950,7 @@ function loadContoursLayer() {
   ensureSource(def.sourceId, def.url);
 
   const widthExpr = ['case', ['==', ['get', 'ID'], 1], 3, 1.2];
-  const color = '#8B0000';  // 🌍 Change contour line color (also change legend Lines ~1194-1200 stroke="#8B0000")
+  const color = '#79491d';  // 🌍 Change contour line color (also change legend Lines ~1194-1200 stroke="#8B0000")
 
   if (!map.getLayer(def.layerId)) {
     map.addLayer({
@@ -1073,8 +1073,8 @@ function updateLegend() {
       <div class="legend-map-title">THESSALIA POPULATION</div>
       <div class="legend-author">
         <strong>Data source:</strong> Hellenic Statistical Authority - Population data 2021<br>
-        <strong>Produced by:</strong> XXX<br> <!-- 🌍 Author name and surname -->
-        <strong>Student ID:</strong> XXX<br> <!-- 🌍 Author ID -->
+        <strong>Produced by:</strong> STRATIGOU AFRATI MARIA<br> <!-- 🌍 Author name and surname -->
+        <strong>Student ID:</strong> rs21656<br> <!-- 🌍 Author ID -->
         National Technical University of Athens (NTUA)<br>
         School of Rural, Surveying & Geoinformatics Engineering<br>
         Cartography Laboratory<br>
@@ -1121,19 +1121,19 @@ function updateLegend() {
   // Proportional symbols legend
   if (enabledLayers.poipop) {
     const maxR = parseInt(document.getElementById('maxRadius').value,10);
-    const maxVal = layerDefinitions.poipop.maxValueApprox || 150000; // 🌍 Set the same number as in Lines 390 and 894 (maximum population value based on the geojson population field values)
+    const maxVal = layerDefinitions.poipop.maxValueApprox || 120000; // 🌍 Set the same number as in Lines 390 and 894 (maximum population value based on the geojson population field values)
     
     // 🌍 Change these values to match your data ranges
-    const value1 = 500;      // 🌍 Smallest circle (select an indicative value)
-    const value2 = 8000;     // 🌍 Small-medium circle (select an indicative value)
-    const value3 = 40000;     // 🌍 Medium-large circle (select an indicative value)
-    const value4 = 80000;    // 🌍 Largest circle (select an indicative value)
+    const value1 = 10000;      // 🌍 Smallest circle (select an indicative value)
+    const value2 = 30000;     // 🌍 Small-medium circle (select an indicative value)
+    const value3 = 60000;     // 🌍 Medium-large circle (select an indicative value)
+    const value4 = 120000;    // 🌍 Largest circle (select an indicative value)
     
     // Define the text labels that appear for each circle
-    const label1 = "500"; // 🌍 Set the same value for the legend as in Line 1127
-    const label2 = "8,000"; // 🌍 Set the same value for the legend as in Line 1128
-    const label3 = "40,000"; // 🌍 Set the same value for the legend as in Line 1129
-    const label4 = "80,000"; // 🌍 Set the same value for the legend as in Line 1130
+    const label1 = "10000"; // 🌍 Set the same value for the legend as in Line 1127
+    const label2 = "30000"; // 🌍 Set the same value for the legend as in Line 1128
+    const label3 = "60000"; // 🌍 Set the same value for the legend as in Line 1129
+    const label4 = "120000"; // 🌍 Set the same value for the legend as in Line 1130
     
     // Calculate circle sizes using Flannery formula
     // Use 100% of maxRadius for proper legend visibility
@@ -1195,10 +1195,10 @@ function updateLegend() {
   if (enabledLayers.contours) {
     // 🗺 Change "Population dynamic (2M & 4M)" to your preferred legend title
     html += `<div class="legend-title">Population dynamic (2M & 4M)</div>`;
-    html += `<div class="legend-row"><svg class="legend-line"><line x1="0" y1="7" x2="40" y2="7" stroke="#8B0000" stroke-width="3"/></svg><div>Primary (Id = 1)</div></div>`;
-    html += `<div class="legend-row"><svg class="legend-line"><line x1="0" y1="7" x2="40" y2="7" stroke="#8B0000" stroke-width="1.2"/></svg><div>Secondary (Id = 2)</div></div>`;
+    html += `<div class="legend-row"><svg class="legend-line"><line x1="0" y1="7" x2="40" y2="7" stroke="#79491d" stroke-width="3"/></svg><div>Primary (Id = 1)</div></div>`;
+    html += `<div class="legend-row"><svg class="legend-line"><line x1="0" y1="7" x2="40" y2="7" stroke="#79491d" stroke-width="1.2"/></svg><div>Secondary (Id = 2)</div></div>`;
     // 🌍 Change stroke="#8B0000" to modify contour line color in legend
-    // Also change map layer color at Line ~953 const color = '#8B0000' (SAME COLOUR AS IN LINE 953)
+    // Also change map layer color at Line ~953 const color = '#79491d' (SAME COLOUR AS IN LINE 953)
     html += '<hr>';
   }
 
