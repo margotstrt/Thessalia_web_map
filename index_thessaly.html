@@ -371,41 +371,41 @@ const layerDefinitions = {
   popdens: {
     sourceId: 'popdens-src',                       // Internal ID for the data source
     layerId: 'popdens-layer',                      // Internal ID for the map layer
-    url: 'https://github.com/margotstrt/Thessalia_web_map/blob/main/data/data/pop_dens.geojson',        // 🌍 Path to your file
-    dataField: 'pop_dens'                           // 🌍 Column name in your GeoJSON
+    url: 'data/pop_dens.geojson',        // 🌍 Path to your file
+    dataField: 'DENSITY'                           // 🌍 Column name in your GeoJSON
   },
   // Dasymmetric map layer (population density by land cover zone)
   denscover: {
     sourceId: 'denscover-src',
     layerId: 'denscover-layer',
-    url: 'https://github.com/margotstrt/Thessalia_web_map/blob/main/data/data/dimoi_dasym.geojson',  // 🌍 Path to your file
-    dataField: 'dimoi_dasym'                        // 🌍 Column name in your GeoJSON
+    url: 'data/dimoi_dasym.geojson',  // 🌍 Path to your file
+    dataField: 'DHMOS_COVE'                        // 🌍 Column name in your GeoJSON
   },
   // Proportional symbols layer (circles sized by population)
   poipop: {
     sourceId: 'poipop-src',
     layerId: 'poipop-layer',
-    url: 'https://github.com/margotstrt/Thessalia_web_map/blob/main/data/data/dimoi_centr.geojson',        // 🌍 Path to your file
-    dataField: 'dimoi_centr',                           // 🌍 Column name in your GeoJSON
+    url: 'data/dimoi_centr.geojson',        // 🌍 Path to your file
+    dataField: 'POPMUN',                           // 🌍 Column name in your GeoJSON
     maxValueApprox: 120000                         // 🌍 Set the maximum population value (for scaling circles)
   },
   // Contours/isopleths layer (population potential lines)
   contours: {
     sourceId: 'contours-src',
     layerId: 'contours-layer',
-    url: 'https://github.com/margotstrt/Thessalia_web_map/blob/main/data/data/pop_contours_200.geojson'     // 🌍 Path to your file
+    url: 'data/pop_contours_200.geojson'     // 🌍 Path to your file
   },
   // Dot density layer (each dot represents X people)
   dots: {
     sourceId: 'dots-src',
     layerId: 'dots-layer',
-    url: 'https://github.com/margotstrt/Thessalia_web_map/blob/main/data/data/pop_dots_500.geojson'          // 🌍 Path to your file
+    url: 'data/pop_dots_500.geojson'          // 🌍 Path to your file
   },
   // Boundaries layer (municipal borders)
   boundaries: {
     sourceId: 'boundaries-src',
     layerId: 'boundaries-layer',
-    url: 'https://github.com/margotstrt/Thessalia_web_map/blob/main/data/data/dimoi_oria.geojson'            // 🌍 Path to your file
+    url: 'data/dimoi_oria.geojson'            // 🌍 Path to your file
   }
 };
 
