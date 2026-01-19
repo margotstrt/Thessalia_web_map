@@ -341,7 +341,7 @@ const map = new maplibregl.Map({
   container: 'map',           // Links to the <div id="map"> element in HTML
   style: 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json',  // Initial basemap style
   center: [22.4, 39.6],       // 🌍 [longitude, latitude] - CHANGE THIS TO MATCH THE STUDY AREA CENTER (APPROXIMATELY)!
-  zoom: 6                    // 🌍 Initial zoom level - CHANGE THIS SO THAT THE REQUIRED ZOOM LEVEL ENCOMPASSES THE ENTIRE STUDY AREA. SMALLER VALUES - ZOOM OUT!
+  zoom: 8                    // 🌍 Initial zoom level - CHANGE THIS SO THAT THE REQUIRED ZOOM LEVEL ENCOMPASSES THE ENTIRE STUDY AREA. SMALLER VALUES - ZOOM OUT!
 });
 
 // ============================================================
@@ -446,11 +446,11 @@ const enabledLayers = {
 // For sequential color schemes (light → dark), use ColorBrewer: https://colorbrewer2.org/
 // - Number of colors must equal number of classes
 const colorSchemes = {
-  3: ['#ffcccc', '#ff6666', '#990000'],           // 🌍 3 classes = 3 colors (lightest to darkest)
-  4: ['#ffcccc', '#ff9999', '#cc0000', '#990000'], // 🌍 4 classes = 4 colors (lightest to darkest)
+  3: ['#f1d7f6', '#d7b5d8', '#df65b0'],           // 🌍 3 classes = 3 colors (lightest to darkest)
+  4: ['#f1d7f6', '#d7b5d8', '#df65b0', '#dd1c77'], // 🌍 4 classes = 4 colors (lightest to darkest)
   5: ['#f1d7f6', '#d7b5d8', '#df65b0', '#dd1c77', '#980043'],  // Default 🌍 5 classes = 5 colors (lightest to darkest)
-  6: ['#ffcccc', '#ff9999', '#ff6666', '#ff3333', '#cc0000', '#990000'], // 🌍 6 classes = 6 colors (lightest to darkest)
-  7: ['#ffcccc', '#ff9999', '#ff6666', '#ff3333', '#ff0000', '#cc0000', '#990000'] // 🌍 7 classes = 7 colors (lightest to darkest)
+  6: ['#f1d7f6', '#d7b5d8', '#df65b0', '#dd1c77', '#980043', '#990000'], // 🌍 6 classes = 6 colors (lightest to darkest)
+  7: ['#f1d7f6', '#d7b5d8', '#df65b0', '#dd1c77', '#980043', '#cc0000', '#990000'] // 🌍 7 classes = 7 colors (lightest to darkest)
 };
 
 /* 🌍 MODIFY DASYMMETRIC MAP COLOR SCHEMES (for DENS_COVER layer) */
@@ -470,11 +470,11 @@ const colorSchemes = {
 // For sequential color schemes (light → dark), use ColorBrewer: https://colorbrewer2.org/
 // - Number of colors must equal number of classes
 const denscoverColorSchemes = {
-  3: ['#ffcccc', '#ff6666', '#990000'], // 🌍 3 classes = 3 colors (lightest to darkest)
-  4: ['#ffcccc', '#ff9999', '#cc0000', '#990000'], // 🌍 4 classes = 4 colors (lightest to darkest)
+  3: ['#f1d7f6', '#d7b5d8', '#df65b0'],           // 🌍 3 classes = 3 colors (lightest to darkest)
+  4: ['#f1d7f6', '#d7b5d8', '#df65b0', '#dd1c77'], // 🌍 4 classes = 4 colors (lightest to darkest)
   5: ['#f1d7f6', '#d7b5d8', '#df65b0', '#dd1c77', '#980043'],  // Default 🌍 5 classes = 5 colors (lightest to darkest)
-  6: ['#ffcccc', '#ff9999', '#ff6666', '#ff3333', '#cc0000', '#990000'], // 🌍 6 classes = 6 colors (lightest to darkest)
-  7: ['#ffcccc', '#ff9999', '#ff6666', '#ff3333', '#ff0000', '#cc0000', '#990000'] // 🌍 7 classes = 7 colors (lightest to darkest)
+  6: ['#f1d7f6', '#d7b5d8', '#df65b0', '#dd1c77', '#980043', '#990000'], // 🌍 6 classes = 6 colors (lightest to darkest)
+  7: ['#f1d7f6', '#d7b5d8', '#df65b0', '#dd1c77', '#980043', '#cc0000', '#990000'] // 🌍 7 classes = 7 colors (lightest to darkest)
 };
 
 /* 🌍 DEFINE YOUR CUSTOM INTERVAL BREAKS FOR POPDENS */
